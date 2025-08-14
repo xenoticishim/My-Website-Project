@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xenotic – Java Developer</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, #2b133b, #4e2775);
+        color: #fff;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    header {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        color: #d9b3ff;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        color: #e6ccff;
+    }
+
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.3);
+        margin-top: 2rem;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        border-bottom: 2px solid #d9b3ff;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-img {
+        display: block;
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .contact-links a, .contact-links p {
+        display: block;
+        margin-top: 0.5rem;
+        color: #d9b3ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .contact-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* Snowfall effect */
+    .snow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .flake {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="snow" id="snow"></div>
+
+<header>
+    <h1>Xenotic</h1>
+    <p>Java Developer, mainly focusing on Minecraft</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>I am Xenotic, a Java Developer primarily focused on Minecraft-related projects. I build my work in CMD like a true geek, keeping it raw.</p>
+</section>
+
+<section>
+    <h2>Experience</h2>
+    <p><strong>2025 – Present:</strong> Coded a Meteor addon and contributed to several other Meteor addons within the DonutSMP community, enhancing gameplay mechanics and optimizing performance for better user experiences.</p>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <img src="/mnt/data/xeno.png" alt="Xeno Addon Project" class="project-img">
+    <h3>Xeno Addon</h3>
+    <p>I coded a project for DonutSMP Minecraft basehunting, taking inspiration from the Krypton Client. The experience was amazing as I learned a lot, especially since I’m still gaining experience. This project challenged me to explore new Java development techniques in Minecraft.</p>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <div class="contact-links">
+        <a href="mailto:XenoticWork@gmail.com">Email: XenoticWork@gmail.com</a>
+        <a href="https://github.com/xenoticishim" target="_blank">GitHub: github.com/xenoticishim</a>
+        <a href="#">Discord: xenoticishim</a>
+    </div>
+</section>
+
+<script>
+    // Generate snowflakes
+    const snowContainer = document.getElementById('snow');
+    const numFlakes = 50;
+
+    for (let i = 0; i < numFlakes; i++) {
+        let flake = document.createElement('div');
+        flake.classList.add('flake');
+        
+        let size = Math.random() * 5 + 2; // size between 2px - 7px
+        flake.style.width = `${size}px`;
+        flake.style.height = `${size}px`;
+        flake.style.left = `${Math.random() * 100}vw`;
+        flake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        flake.style.animationDelay = `${Math.random() * 10}s`;
+
+        snowContainer.appendChild(flake);
+    }
+</script>
+
+</body>
+</html>
